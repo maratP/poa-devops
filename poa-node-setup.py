@@ -21,7 +21,7 @@ def replace()
 	for i, line in enumerate(fileinput.input('all', inplace=1)):
 	sys.stdout.write(line.replace(old, new))
 
-def showMenu()
+def showMainMenu()
 	ans=True
 	while ans:
 		print ("""
