@@ -10,6 +10,8 @@ import os
 import sys
 import fileinput
 
+#import poa-devops
+
 def getVarFromFile(filename):
 	import imp
 	f = open(filename)
