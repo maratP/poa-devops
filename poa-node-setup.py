@@ -201,6 +201,7 @@ replace()
 ## Create hosts file and add server IP
 ## We will need to add params here to specify correct node type
 cmd = "echo [validator] > hosts"
+#cmd = "echo ["+nodeType+"] > hosts"
 os.system(cmd)
 cmd = "echo " + SERVER_IP + " >> hosts"
 os.system(cmd)
