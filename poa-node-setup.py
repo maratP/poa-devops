@@ -17,7 +17,7 @@ def getVarFromFile(filename):
 	data = imp.load_source('data', '', f)
 	f.close()
 
-def replace
+def replace()
 	for i, line in enumerate(fileinput.input('all', inplace=1)):
 	sys.stdout.write(line.replace(old, new))
 	
@@ -56,60 +56,60 @@ os.system ('cat group_vars/all.network group_vars/validator.example > group_vars
 ##------------------------------------------------------------------
 old = 'access_key: "INSERT KEY HERE"'
 new = 'access_key: "' + data.access_key + '"'
-replace
+replace()
 ##------------------------------------------------------------------
 old = 'secret_key: "INSERT SECRET HERE"'
 new = 'secret_key: "' + data.secret_key + '"'
-replace
+replace()
 ##------------------------------------------------------------------
 old = 'awskeypair_name: "keypairname"'
 new = 'awskeypair_name: "' + data.awskeypair_name + '"'
-replace
+replace()
 ##------------------------------------------------------------------
 old = 'NODE_FULLNAME: "INSERT NODENAME"'
 new = 'NODE_FULLNAME: "' + data.NODE_FULLNAME + '"'
-replace
+replace()
 ##------------------------------------------------------------------
 old = 'NODE_ADMIN_EMAIL: "INSERT@EMAIL"'
 new = 'NODE_ADMIN_EMAIL: "' + data.NODE_ADMIN_EMAIL + '"'
-replace
+replace()
 ##------------------------------------------------------------------
 old = 'NETSTATS_SERVER: "INSERT FULL URL"'
 new = 'NETSTATS_SERVER: "' + data.NETSTATS_SERVER + '"'
-replace
+replace()
 ##------------------------------------------------------------------
 old = 'NETSTATS_SECRET: "INSERT SECRET"'
 new = 'NETSTATS_SECRET: "' + data.NETSTATS_SECRET + '"'
-replace
+replace()
 ##------------------------------------------------------------------
 
 
 ##------------------------------------------------------------------
 old = 'MINING_KEYFILE: \'INSERT HERE\''
 new = 'MINING_KEYFILE: ' + data.MINING_KEYFILE
-replace
+replace()
 ##------------------------------------------------------------------
 old = 'MINING_ADDRESS: "INSERT HERE"'
 new = 'MINING_ADDRESS: "' + data.MINING_ADDRESS + '"'
-replace
+replace()
 ##------------------------------------------------------------------
 old = 'MINING_KEYPASS: "INSERT HERE"'
 new = 'MINING_KEYPASS: "' + data.MINING_KEYPASS + '"'
-replace
+replace()
 ##------------------------------------------------------------------
 
 ##------------------------------------------------------------------
 old = 'allow_validator_ssh: true'
 new = 'allow_validator_ssh: ' + data.allow_validator_ssh
-replace
+replace()
 ##------------------------------------------------------------------
 old = 'allow_validator_p2p: true'
 new = 'allow_validator_p2p: ' + data.allow_validator_p2p
-replace
+replace()
 ##------------------------------------------------------------------
 old = 'associate_validator_elastic_ip: false'
 new = 'associate_validator_elastic_ip: ' + data.associate_validator_elastic_ip
-replace
+replace()
 ##------------------------------------------------------------------
 
 ## Create hosts file and add server IP
