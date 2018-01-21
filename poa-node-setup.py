@@ -55,31 +55,31 @@ os.system ('cat group_vars/all.network group_vars/validator.example > group_vars
 
 ##------------------------------------------------------------------
 old = 'access_key: "INSERT KEY HERE"'
-new = 'access_key: ' + data.access_key
+new = 'access_key: "' + data.access_key + '"'
 replace
 ##------------------------------------------------------------------
 old = 'secret_key: "INSERT SECRET HERE"'
-new = 'secret_key: ' + data.secret_key
+new = 'secret_key: "' + data.secret_key + '"'
 replace
 ##------------------------------------------------------------------
 old = 'awskeypair_name: "keypairname"'
-new = 'awskeypair_name: ' + data.awskeypair_name
+new = 'awskeypair_name: "' + data.awskeypair_name + '"'
 replace
 ##------------------------------------------------------------------
 old = 'NODE_FULLNAME: "INSERT NODENAME"'
-new = 'NODE_FULLNAME: ' + data.NODE_FULLNAME
+new = 'NODE_FULLNAME: "' + data.NODE_FULLNAME + '"'
 replace
 ##------------------------------------------------------------------
 old = 'NODE_ADMIN_EMAIL: "INSERT@EMAIL"'
-new = 'NODE_ADMIN_EMAIL: ' + data.NODE_ADMIN_EMAIL
+new = 'NODE_ADMIN_EMAIL: "' + data.NODE_ADMIN_EMAIL + '"'
 replace
 ##------------------------------------------------------------------
 old = 'NETSTATS_SERVER: "INSERT FULL URL"'
-new = 'NETSTATS_SERVER: ' + data.NETSTATS_SERVER
+new = 'NETSTATS_SERVER: "' + data.NETSTATS_SERVER + '"'
 replace
 ##------------------------------------------------------------------
 old = 'NETSTATS_SECRET: "INSERT SECRET"'
-new = 'NETSTATS_SECRET: ' + data.NETSTATS_SECRET
+new = 'NETSTATS_SECRET: "' + data.NETSTATS_SECRET + '"'
 replace
 ##------------------------------------------------------------------
 
@@ -90,11 +90,11 @@ new = 'MINING_KEYFILE: ' + data.MINING_KEYFILE
 replace
 ##------------------------------------------------------------------
 old = 'MINING_ADDRESS: "INSERT HERE"'
-new = 'MINING_ADDRESS: ' + data.MINING_ADDRESS
+new = 'MINING_ADDRESS: "' + data.MINING_ADDRESS + '"'
 replace
 ##------------------------------------------------------------------
 old = 'MINING_KEYPASS: "INSERT HERE"'
-new = 'MINING_KEYPASS: ' + data.MINING_KEYPASS
+new = 'MINING_KEYPASS: "' + data.MINING_KEYPASS + '"'
 replace
 ##------------------------------------------------------------------
 
