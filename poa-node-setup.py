@@ -119,14 +119,23 @@ os.system ('cd deployment-playbooks')
 # os.system('git checkout core')
 # OR for sokol testnet
 os.system ('git checkout sokol')
+
+#os.system ('git checkout networkType')
+
 # check that you ended up on a correct branch (look where the `*` is)
 os.system ('git branch')
 
 ## Prepare SSH keys (asummes you already have SSH keys for remote server)
 os.system ('cat ~/.ssh/id_rsa.pub > files/admins.pub')
 os.system ('cp files/admins.pub files/ssh_validator.pub')
+#cmd = "cp files/admins.pub files/ssh_" +nodeType+ ".pub"
+#os.system ('cmd')
+
 
 os.system ('cat group_vars/all.network group_vars/validator.example > group_vars/all')
+#cmd = 'cat group_vars/all.network group_vars/'+nodeType+'.example > group_vars/all'
+#os.system ('cmd')
+
 
 ## Start replacing params (This cloud be improved with foreach loops and key/value match and replace)
 
