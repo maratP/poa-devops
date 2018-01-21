@@ -11,12 +11,16 @@ import sys
 import fileinput
 
 def getVarFromFile(filename):
-    import imp
-    f = open(filename)
-    global data
-    data = imp.load_source('data', '', f)
-    f.close()
+	import imp
+	f = open(filename)
+	global data
+	data = imp.load_source('data', '', f)
+	f.close()
 
+def replace
+	for i, line in enumerate(fileinput.input('all', inplace=1)):
+	sys.stdout.write(line.replace(old, new))
+	
 # Get all params from config.txt (later we will also add a menu)
 getVarFromFile('config.txt')
 
@@ -52,73 +56,60 @@ os.system ('cat group_vars/all.network group_vars/validator.example > group_vars
 ##------------------------------------------------------------------
 old = 'access_key: "INSERT KEY HERE"'
 new = 'access_key: ' + data.access_key
-for i, line in enumerate(fileinput.input('all', inplace=1)):
-	sys.stdout.write(line.replace(old, new))	
+replace
 ##------------------------------------------------------------------
 old = 'secret_key: "INSERT SECRET HERE"'
 new = 'secret_key: ' + data.secret_key
-for i, line in enumerate(fileinput.input('all', inplace=1)):
-	sys.stdout.write(line.replace(old, new))
+replace
 ##------------------------------------------------------------------
 old = 'awskeypair_name: "keypairname"'
 new = 'awskeypair_name: ' + data.awskeypair_name
-for i, line in enumerate(fileinput.input('all', inplace=1)):
-	sys.stdout.write(line.replace(old, new))
+replace
 ##------------------------------------------------------------------
 old = 'NODE_FULLNAME: "INSERT NODENAME"'
 new = 'NODE_FULLNAME: ' + data.NODE_FULLNAME
-for i, line in enumerate(fileinput.input('all', inplace=1)):
-	sys.stdout.write(line.replace(old, new))
+replace
 ##------------------------------------------------------------------
 old = 'NODE_ADMIN_EMAIL: "INSERT@EMAIL"'
 new = 'NODE_ADMIN_EMAIL: ' + data.NODE_ADMIN_EMAIL
-for i, line in enumerate(fileinput.input('all', inplace=1)):
-	sys.stdout.write(line.replace(old, new))
+replace
 ##------------------------------------------------------------------
 old = 'NETSTATS_SERVER: "INSERT FULL URL"'
 new = 'NETSTATS_SERVER: ' + data.NETSTATS_SERVER
-for i, line in enumerate(fileinput.input('all', inplace=1)):
-	sys.stdout.write(line.replace(old, new))
+replace
 ##------------------------------------------------------------------
 old = 'NETSTATS_SECRET: "INSERT SECRET"'
 new = 'NETSTATS_SECRET: ' + data.NETSTATS_SECRET
-for i, line in enumerate(fileinput.input('all', inplace=1)):
-	sys.stdout.write(line.replace(old, new))
+replace
 ##------------------------------------------------------------------
 
 
 ##------------------------------------------------------------------
 old = 'MINING_KEYFILE: \'INSERT HERE\''
 new = 'MINING_KEYFILE: ' + data.MINING_KEYFILE
-for i, line in enumerate(fileinput.input('all', inplace=1)):
-	sys.stdout.write(line.replace(old, new))
+replace
 ##------------------------------------------------------------------
 old = 'MINING_ADDRESS: "INSERT HERE"'
 new = 'MINING_ADDRESS: ' + data.MINING_ADDRESS
-for i, line in enumerate(fileinput.input('all', inplace=1)):
-	sys.stdout.write(line.replace(old, new))
+replace
 ##------------------------------------------------------------------
 old = 'MINING_KEYPASS: "INSERT HERE"'
 new = 'MINING_KEYPASS: ' + data.MINING_KEYPASS
-for i, line in enumerate(fileinput.input('all', inplace=1)):
-	sys.stdout.write(line.replace(old, new))
+replace
 ##------------------------------------------------------------------
 
 ##------------------------------------------------------------------
 old = 'allow_validator_ssh: true'
 new = 'allow_validator_ssh: ' + data.allow_validator_ssh
-for i, line in enumerate(fileinput.input('all', inplace=1)):
-	sys.stdout.write(line.replace(old, new))
+replace
 ##------------------------------------------------------------------
 old = 'allow_validator_p2p: true'
 new = 'allow_validator_p2p: ' + data.allow_validator_p2p
-for i, line in enumerate(fileinput.input('all', inplace=1)):
-	sys.stdout.write(line.replace(old, new))
+replace
 ##------------------------------------------------------------------
 old = 'associate_validator_elastic_ip: false'
 new = 'associate_validator_elastic_ip: ' + data.associate_validator_elastic_ip
-for i, line in enumerate(fileinput.input('all', inplace=1)):
-	sys.stdout.write(line.replace(old, new))
+replace
 ##------------------------------------------------------------------
 
 ## Create hosts file and add server IP
