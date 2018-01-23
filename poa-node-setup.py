@@ -6,10 +6,6 @@ import fileinput
 
 #import poaMenu
 
-# These will be coming from a menu
-networkType = "sokol"
-nodeType = "validator"
-
 def getVarFromFile(fileName):
 	import imp
 	f = open(fileName)
