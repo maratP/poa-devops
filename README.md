@@ -11,7 +11,7 @@ Things to add:
 - Improve match and replace functions with foreach loops key/value (Not critical)
 - Remotely install Python on remote server via SSH and then run ansible playbook with paramiko (Python via SSS)
 - Simplify config.txt format, so users don't have to worry about correct formmat - Done
-- Add logging - Done
+- Add logging - Done (setup.log will be created in the same directory)
 
 Prerequisites:
 
