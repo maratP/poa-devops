@@ -13,11 +13,28 @@ Things to add:
 - Simplify config.txt format, so users don't have to worry about correct formmat - Done
 - Add logging - Done
 
+Prerequisites:
+
+	- Create new Ubuntu VM (this would be your control VM)
+	- Create another Ubuntu VM (that would be your node server)
+	- Make sure you have SSH keys setup and you can SSH from control VM to node VM (for now, SSH keys should be in default file ~/.ssh/id_rsa.pub)
+
+How to use?
+
+	- Add your information to config.txt file
+	- Upload 2 files files to control VM at /ubuntu/home (you can use scp)
+		1. poa-node-setup.py
+		2. config.txt 
+	- run the script: "python3 poa-node-setup.py"
+	- Done. (I will be adding more error checking, but so far it worked for me on AWS)
 
 Update:
 
 Tested on AWS. Currently it works only for validator node since boot node setup is slightly different
 
+
+=====
+Why?
 
 Process is simple:
 
