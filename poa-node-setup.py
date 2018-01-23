@@ -28,29 +28,31 @@ def replace(oldStr,newStr,fileName):
 getVarFromFile('config.txt')
 
 
-#sudo apt-get update && sudo apt-get -y upgrade
-#sudo apt-get install python-pip
-#sudo apt install git
+logging.info('Updating your VM')
+os.system ('sudo apt-get update && sudo apt-get -y upgrade')
+
+logging.info('Installing python-pip')
+os.system ('sudo apt-get install python-pip')
+
+logging.info('Installing git')
+os.system ('sudo apt install git')
+
 
 ## Install ansible
-print ("Installing Ansible\n==========\n")
 logging.info('Installing Ansible')
 os.system ('sudo pip install ansible')
 
 
 ## Install packages
-print ("Installing boto and boto3\n==========\n")
 logging.info('Installing boto and boto3')
 os.system ('sudo pip install boto')
 os.system ('sudo pip install boto3')
 
 ## Make sure you have latest AWS CLI
-print ("Making sure you have latest AWS CLI\n==========\n")
 logging.info('Making sure you have latest AWS CLI')
 os.system ('pip install awscli --upgrade --user')
 
 ## Download and configure playbook
-print ("Downloading Ansible playbook\n==========\n")
 logging.info('Downloading Ansible playbook')
 os.chdir ('/home/ubuntu')
 os.system ('git clone https://github.com/poanetwork/deployment-playbooks.git')
@@ -60,7 +62,7 @@ os.chdir ('deployment-playbooks')
 # OR for sokol testnet
 #os.system ('git checkout sokol')
 
-print ("Selecting correct branch based on specified network type: [" + data.networkType + "]\n==========\n")
+
 text = "Selecting correct branch based on specified network type: [" + data.networkType + "]"
 logging.info(text)
 cmd = "git checkout " + data.networkType
@@ -70,14 +72,12 @@ os.system (cmd)
 os.system ('git branch')
 
 ## Prepare SSH keys (asummes you already have SSH keys for remote server)
-print ("Coping SSH keys\n==========\n")
 logging.info('Coping SSH keys')
 os.system ('cat ~/.ssh/id_rsa.pub > files/admins.pub')
 #os.system ('cp files/admins.pub files/ssh_validator.pub')
 cmd = "cp files/admins.pub files/ssh_" +data.nodeType+ ".pub"
 #os.system ('cmd')
 
-print ("Configuring based on node type: [" +data.nodeType+ "]\n==========\n")
 text = 'Configuring based on node type: [' +data.nodeType+ ']'
 logging.info(text)
 #os.system ('cat group_vars/all.network group_vars/validator.example > group_vars/all')
@@ -93,7 +93,6 @@ os.system (cmd)
 
 os.chdir ('/home/ubuntu/deployment-playbooks/group_vars')
 
-print ("Updating files with your information...\n==========\n")
 logging.info("Updating files with your information...")
 #testFile=open(filename)
 fileName = "all"
@@ -164,7 +163,6 @@ replace(oldStr,newStr,fileName)
 
 ## Create hosts file and add server IP
 ## We will need to add params here to specify correct node type
-print ("Creating HOSTS file\n==========\n")
 logging.info('Creating HOSTS file')
 os.chdir ('/home/ubuntu/deployment-playbooks')
 #cmd = "echo [validator] > hosts"
@@ -174,7 +172,6 @@ cmd = "echo " + data.SERVER_IP + " >> hosts"
 os.system(cmd)
 
 # run this script to configure the instance (might want to use paramiko - ssh via python)
-print ("Running Ansible playbook and deploying\n==========\n")
 logging.info('Running Ansible playbook and deploying')
 os.system ('ansible-playbook -i hosts site.yml')
 
