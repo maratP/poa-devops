@@ -1,3 +1,6 @@
+networkType = "sokol"
+nodeType = "validator"
+
 access_key = "INSERT KEY HERE"
 secret_key = "INSERT SECRET HERE"
 awskeypair_name = "keypairname"
