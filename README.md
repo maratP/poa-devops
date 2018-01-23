@@ -33,7 +33,8 @@ What would you like to do?
 
 Then selects action, node type, network type, specifies other information that is needed. (in sub-menus)
 
-    Done (everything is done automatically and minimizes user errors and support tickets). Also it assures that everything is in compliance and was setup properly.
+    Done (everything is done automatically and minimizes user errors and support tickets)
+	Also it assures that everything is in compliance and was setup properly.
 
 Even creating and setting up VMs for nodes would be automated. After that, Control VM could be powered off. (Or it could monitor all nodes and perform other actions)
 
