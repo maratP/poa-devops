@@ -10,10 +10,12 @@ NODE_ADMIN_EMAIL = "INSERT@EMAIL"
 NETSTATS_SERVER = "INSERT FULL URL"
 NETSTATS_SECRET = "INSERT SECRET"
 
-MINING_KEYFILE = "\'{\"address\":\"...\"}\'"
+MINING_KEYFILE = '{"address":"..."}'
 MINING_ADDRESS = "INSERT HERE"
 MINING_KEYPASS = "INSERT HERE"
 
 allow_validator_ssh = "true"
 allow_validator_p2p = "true"
 associate_validator_elastic_ip = "false"
+
+SERVER_IP = ""
